@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Baisics | Ozons Picks</title>
@@ -24,22 +23,31 @@
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-
-
     .header-top {
-	width: 100%
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 20px;
+      position: relative;
     }
-
     .logo { font-size: 1.6rem; font-weight: bold; color: white; }
     .cart-btn {
       font-size: 20px;
       background-color: #ff6b8a;
       color: white;
       padding: 8px;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+    }
+    .cart-count {
+      position: absolute;
+      top: 4px;
+      right: 12px;
+      background: red;
+      color: white;
+      font-size: 0.65rem;
+      padding: 2px 6px;
       border-radius: 50%;
     }
     .nav {
@@ -152,7 +160,7 @@
     .whatsapp-btn, .order-btn {
       font-size: 0.9rem;
       padding: 0.5rem 1rem;
-      background-color: #b2e2cc;
+      background-color: #25D366;
       color: white;
       border: none;
       border-radius: 6px;
@@ -160,13 +168,11 @@
       margin-top: 0.6rem;
     }
     .order-btn {
-      background-color: #ed9cd8;
+      background-color: #ff4db8;
       font-weight: bold;
       padding: 0.7rem 1.3rem;
     }
     .footer {
-	width: 100%
-max-width: 100%
       background-color: black;
       color: white;
       text-align: center;
@@ -175,248 +181,73 @@ max-width: 100%
       margin-top: auto;
     }
 
-.cart-panel {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 300px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  transition: right 0.3s ease;
-  z-index: 1000;
-}
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      transition: right 0.4s ease;
+      z-index: 1000;
+    }
 
-.cart-panel.open {
-  right: 0;
-}
+    .cart-panel.open {
+      right: 0;
+    }
 
-.cart-items {
-  max-height: 60vh;
-  overflow-y: auto;
-  margin-bottom: 1rem;
-}
+    .cart-panel .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #888;
+    }
 
-.cart-item {
-  border-bottom: 1px solid #ccc;
-  padding: 0.5rem 0;
-}
+    .cart-items {
+      max-height: 60vh;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
 
-.cart-item p {
-  margin: 0.3rem 0;
-  font-size: 0.85rem;
-}
+    .cart-item {
+      border-bottom: 1px solid #ccc;
+      padding: 0.5rem 0;
+    }
 
-.cart-item select, .cart-item input {
-  font-size: 0.85rem;
-  margin: 0.2rem 0;
-}
+    .cart-item p {
+      margin: 0.3rem 0;
+      font-size: 0.85rem;
+    }
 
-.cart-item button {
-  font-size: 0.75rem;
-  background: #ccc;
-  border: none;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 0.3rem;
-}
+    .cart-item select, .cart-item input {
+      font-size: 0.85rem;
+      margin: 0.2rem 0;
+    }
 
-.checkout-btn {
-  width: 100%;
-  padding: 0.6rem;
-  font-size: 1rem;
-  background: #25D366;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
+    .cart-item button {
+      font-size: 0.75rem;
+      background: #ccc;
+      border: none;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 0.3rem;
+    }
 
-.featured-box {
-  display: flex;
-  gap: 1.5rem;
-  background-color: #f6f6f6;
-  padding: 1.5rem;
-  border-radius: 10px;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.featured-image img {
-  max-width: 200px;
-  border-radius: 8px;
-}
-
-.featured-content h3 {
-  color: #d63384;
-  margin-top: 0;
-}
-
-.featured-content .price {
-  font-weight: bold;
-  color: #d0004b;
-}
-
-.featured-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.featured-buttons .add-to-cart-btn,
-.featured-buttons .whatsapp-btn {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-size: 0.95rem;
-}
-
-.featured-buttons .add-to-cart-btn {
-  background-color: #ff4d6d;
-  color: white;
-  cursor: pointer;
-}
-
-.featured-buttons .add-to-cart-btn:hover {
-  background-color: #e03b5d;
-}
-
-.featured-buttons .whatsapp-btn {
-  background-color: #25d366;
-  color: white;
-  display: inline-block;
-  text-align: center;
-}
-
-.featured-buttons .whatsapp-btn:hover {
-  background-color: #1ebe5d;
-}
-
-
-  .cart-icon-wrapper {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-  }
-
-  .cart-badge {
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    position: absolute;
-    top: -8px;
-    right: -10px;
-  }
-
-.featured-box {
-  display: flex;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  gap: 30px;
-  align-items: flex-start;
-  margin-bottom: 40px;
-}
-
-.featured-image img {
-  width: 280px;
-  height: auto;
-  border-radius: 12px;
-}
-
-.featured-content {
-  flex: 1;
-}
-
-.featured-content h3 {
-  font-size: 22px;
-  color: #d60087;
-  margin-bottom: 8px;
-}
-
-.featured-content p {
-  margin: 5px 0;
-}
-
-.featured-content .price {
-  font-weight: bold;
-  color: #d60087;
-  margin-bottom: 12px;
-}
-
-.style-select,
-.qty-input {
-  padding: 8px 10px;
-  font-size: 14px;
-  margin-right: 10px;
-  margin-top: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.featured-buttons {
-  margin-top: 15px;
-}
-
-.add-to-cart {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  margin-right: 10px;
-}
-
-.whatsapp-btn {
-  background-color: white;
-  color: #333;
-  border: 1px solid #333;
-}
-.whatsapp-btn:hover {
-  background-color: #f2f2f2;
-}
-
-.card {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .product-card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .product-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-list .product-card {
-    max-width: 95%;
-  }
-
-  .header-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-
+    .checkout-btn {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
