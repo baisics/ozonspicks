@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Ozons Picks</title>
+  <title>Baisics | Ozons Picks</title>
   <style>
     * { box-sizing: border-box; }
-
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -16,41 +15,33 @@
       font-size: 18px;
       line-height: 1.6;
     }
-
     a {
       color: #007bff;
       text-decoration: underline;
     }
-
     .header {
       background-color: #000;
       color: white;
-      padding: 20px 16px;
+      padding: 20px;
     }
-
     .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
     }
-
     .logo {
       font-size: 2rem;
       font-weight: bold;
     }
-
     .cart-btn {
       font-size: 24px;
       background-color: #ff6b8a;
       color: white;
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: 50%;
-      position: relative;
       cursor: pointer;
+      position: relative;
     }
-
     .cart-count {
       position: absolute;
       top: -6px;
@@ -61,15 +52,13 @@
       padding: 2px 6px;
       border-radius: 50%;
     }
-
     .nav {
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 14px;
-      padding-top: 12px;
+      justify-content: center;
     }
-
     .nav a {
       color: white;
       font-weight: bold;
@@ -94,99 +83,10 @@
       margin-bottom: 1rem;
     }
 
-    .featured-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  align-items: flex-start;
-  padding: 1rem;
-}
-
-.featured-image img {
-  width: 200px;
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-.featured-content {
-  flex: 1;
-}
-
-.featured-content h3 {
-  font-size: 1.3rem;
-  color: #d63384;
-  margin: 0.3rem 0;
-}
-
-.featured-content p {
-  font-size: 0.95rem;
-  margin: 0.3rem 0;
-}
-
-.featured-content .price {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #b30059;
-}
-
-.style-select, .qty-input {
-  font-size: 0.95rem;
-  padding: 6px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 100%;
-}
-
-.featured-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 10px;
-}
-
-.featured-buttons .add-to-cart,
-.featured-buttons .whatsapp-btn {
-  font-size: 0.9rem;
-  padding: 10px 16px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-.featured-buttons .whatsapp-btn {
-  background-color: #25D366;
-  color: white;
-}
-
-.featured-buttons .add-to-cart {
-  background-color: #333;
-  color: white;
-}
-
-    .whatsapp-btn, .order-btn, .add-to-cart {
-      font-size: 1rem;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      border: none;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .whatsapp-btn {
-      background-color: #25D366;
-      color: white;
-    }
-
-    .order-btn {
-      background-color: #ff4db8;
-      color: white;
-    }
-
-    .products {
+    .product-list {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 1.5rem;
     }
 
     .product {
@@ -198,38 +98,101 @@
 
     .product img {
       width: 100%;
-      height: 160px;
+      height: auto;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 0.8rem;
     }
 
     .product h3 {
-      font-size: 1.1rem;
-      margin: 0.5rem 0;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
     }
 
     .product p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: bold;
       color: #b30059;
     }
 
-    .product select,
-    .product input[type="number"] {
+    .product select, .product input[type="number"] {
       width: 100%;
-      font-size: 0.95rem;
-      padding: 6px;
-      margin-top: 6px;
+      font-size: 1rem;
+      padding: 8px;
+      margin-top: 8px;
       border: 1px solid #ccc;
       border-radius: 6px;
     }
 
-    .product .add-to-cart {
-      margin-top: 10px;
+    .add-to-cart {
       width: 100%;
       background-color: #333;
       color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+
+    .featured-box {
+  background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(255, 192, 203, 0.25);
+  position: relative;
+  text-align: center;
+}
+
+.featured-image {
+  position: relative;
+  display: inline-block;
+}
+
+.featured-image img {
+  max-width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.featured-image img:hover {
+  transform: scale(1.03);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4db8;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+
+    .whatsapp-btn, .order-btn {
+      font-size: 1rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      border: none;
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #25D366;
+      color: white;
+    }
+    .order-btn {
+      background-color: #ff4db8;
     }
 
     .footer {
@@ -294,37 +257,113 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        font-size: 19px;
-      }
-
-      .logo {
-        font-size: 2rem;
-      }
-
-      .nav a {
-        font-size: 1rem;
-      }
-
-      .footer {
-        font-size: 1.1rem;
-      }
-
-      .featured-box {
-        flex-direction: column;
-      }
+      body { font-size: 19px; }
+      .logo { font-size: 2rem; }
+      .product img { height: auto; }
     }
+
+.product-gallery {
+  text-align: center;
+}
+
+.main-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.thumbnail-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail-gallery img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.thumbnail-gallery img.selected {
+  border-color: hotpink;
+}
+
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail-list .thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbnail-list .thumb.selected {
+  border-color: #ff4db8;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+
+<style>
+.thumbnail-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s, transform 0.3s;
+}
+
+.thumbnail:hover {
+  border: 2px solid #aaa;
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border: 2px solid #ff4db8;
+}
+</style>
+
+
   </style>
 </head>
 <body>
 
 <header class="header">
   <div class="header-top">
-    <div class="logo">Ozons Picks</div>
+    <div class="logo">Baisics</div>
     <div class="cart-btn" onclick="toggleCart()">🛒<span class="cart-count" id="cart-count">0</span></div>
   </div>
   <nav class="nav">
-    <a href="#featured">Featured</a>
     <a href="#products">Products</a>
     <a href="#faq">FAQ</a>
     <a href="#reviews">Reviews</a>
@@ -335,76 +374,138 @@
 </header>
 
 <div class="wrapper">
-  <section class="section-grey" id="featured">
-    <h2>🌟 This Month’s Featured Box / 本月爆款 🌟</h2>
-    <div class="featured-box">
-      <div class="featured-image">
-        <img src="https://i.postimg.cc/XJtLG78H/Whats-App-Image-2025-04-11-at-23-20-27.jpg" alt="Aesthetic Box" />
-      </div>
-      <div class="featured-content">
-        <h3>Aesthetic Box</h3>
-        <p>A dreamy surprise for girls who collect the cutest things in the world.</p>
-        <p class="price">RM100.00</p>
-        <select class="style-select"><option value="">Select Style</option><option>Classic</option><option>Girly</option></select>
-        <input type="number" class="qty-input" value="1" min="1" />
-        <div class="featured-buttons">
-          <button class="add-to-cart" onclick="addFeaturedToCart()">Add to Cart</button>
-          <a href="https://wa.me/60109371163" target="_blank" class="whatsapp-btn">Order via WhatsApp</a>
-        </div>
-      </div>
-    </div>
+  <section class="section-grey" id="about">
+    <h1>Curated Just for You</h1>
+    <p>Ozons Picks 是一个精挑精选的商品集合，无论是家居、科技还是时尚配件，我们只为你挑选真正值得拥有的东西。</p>
+<p>Ozons Picks is a curated collection of products, whether it's home, technology or fashion accessories, we only select things that are truly worth having for you.</p>
   </section>
+
+ <section style="background-color: #f5f5f5; padding: 3rem 1rem; border-radius: 20px;">
+  <h2 style="text-align: center; font-size: 1.8rem; font-weight: bold; margin-bottom: 2rem;">
+    🌟 This Month’s Featured Box / 本月爆款 🌟
+  </h2>
+
+  <div style="max-width: 500px; margin: 0 auto; background: #fffdf8; border-radius: 16px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05); padding: 2rem; position: relative; text-align: center;">
+
+    <!-- HOT 徽章 -->
+    <div style="position: absolute; top: 16px; right: 16px; background-color: #ff4db8; color: white; padding: 6px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+      🔥 HOT
+    </div>
+
+    <!-- 主图 -->
+    <div class="featured-image-container">
+      <img id="main-featured-img" src="https://i.postimg.cc/XJtLG78H/Whats-App-Image-2025-04-11-at-23-20-27.jpg" alt="Aesthetic Box" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+    </div>
+
+    <!-- 缩略图 -->
+    <div class="thumbnail-row">
+      <img class="thumbnail" src="https://i.postimg.cc/XJtLG78H/Whats-App-Image-2025-04-11-at-23-20-27.jpg" onclick="switchFeaturedImage(this)">
+
+      <img class="thumbnail" src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" onclick="switchFeaturedImage(this)">
+
+      <img class="thumbnail" src="https://i.postimg.cc/gJrN91gH/sample3.jpg" onclick="switchFeaturedImage(this)">
+    </div>
+
+    <!-- 商品信息 -->
+    <h3 style="font-size: 1.3rem; font-weight: bold; margin-top: 1rem;">Aesthetic Box</h3>
+    <p style="font-size: 0.95rem; color: #555; margin-bottom: 1rem;">
+      A dreamy surprise for girls who collect the cutest things in the world.
+    </p>
+    <p style="font-weight: bold; font-size: 1.1rem; color: #333;">RM100.00</p>
+
+    <!-- WhatsApp按钮 -->
+    <a href="https://wa.me/60109371163" target="_blank" style="display: inline-block; margin-top: 1rem; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: background 0.3s;">
+      Order via WhatsApp
+    </a>
+  </div>
+</section>
+
+
 
   <section class="section-grey" id="products">
     <h2>Best Sellers</h2>
-    <div class="products">
+    <div class="product-list">
+
       <div class="product">
-        <img src="https://i.postimg.cc/Q9BBDQCP/Whats-App-Image-2025-04-09-at-22-50-54.jpg" />
-        <h3>Smart LED Lamp</h3>
-        <p>RM129.00</p>
-        <select><option>Select</option><option>S</option><option>M</option><option>L</option></select>
-        <input type="number" min="1" value="1" />
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img src="https://i.postimg.cc/XJtLG78H/Whats-App-Image-2025-04-11-at-23-20-27.jpg" />
-        <h3>Minimalist Water Bottle</h3>
-        <p>RM59.00</p>
-        <select><option>Select</option><option>White</option><option>Black</option></select>
-        <input type="number" min="1" value="1" />
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
+  <div class="product-gallery">
+    <img src="img1.jpg" class="main-image" />
+    <div class="thumbnail-list">
+      <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="thumb selected" onclick="changeMainImage(this)" />
+      <img src="img2.jpg" class="thumb" onclick="changeMainImage(this)" />
+      <img src="img3.jpg" class="thumb" onclick="changeMainImage(this)" />
     </div>
-  </section>
+  </div>
+  <h3>Smart LED Lamp</h3>
+  <p>RM129.00</p>
+  <select> <option>S</option> <option>M</option> </select>
+  <input type="number" min="1" value="1" />
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+
+     <div class="product">
+  <div class="product-gallery">
+    <img src="img1.jpg" class="main-image" />
+    <div class="thumbnail-list">
+      <img src="img1.jpg" class="thumb selected" onclick="changeMainImage(this)" />
+      <img src="img2.jpg" class="thumb" onclick="changeMainImage(this)" />
+      <img src="img3.jpg" class="thumb" onclick="changeMainImage(this)" />
+    </div>
+  </div>
+  <h3>Smart LED Lamp</h3>
+  <p>RM129.00</p>
+  <select> <option>S</option> <option>M</option> </select>
+  <input type="number" min="1" value="1" />
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+
+<div class="product">
+  <div class="product-gallery">
+    <img src="img1.jpg" class="main-image" />
+    <div class="thumbnail-list">
+      <img src="img1.jpg" class="thumb selected" onclick="changeMainImage(this)" />
+      <img src="img2.jpg" class="thumb" onclick="changeMainImage(this)" />
+      <img src="img3.jpg" class="thumb" onclick="changeMainImage(this)" />
+    </div>
+  </div>
+  <h3>Smart LED Lamp</h3>
+  <p>RM129.00</p>
+  <select> <option>S</option> <option>M</option> </select>
+  <input type="number" min="1" value="1" />
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+</section>
 
   <section class="section-grey" id="faq">
     <h2>Frequently Asked Questions</h2>
-    <p><strong>Q:</strong> Are these tees ready stock?<br><strong>A:</strong> All apparel is pre-order (2–3 weeks).</p>
-    <p><strong>Q:</strong> Do you ship outside Malaysia?<br><strong>A:</strong> Currently, we only ship within Malaysia.</p>
-    <p><strong>Q:</strong> Can I exchange size?<br><strong>A:</strong> No exchanges or returns.</p>
-    <p><strong>Q:</strong> How do I order?<br><strong>A:</strong> Click the WhatsApp link to place your order directly.</p>
+    <p><strong>Q: Are these tees ready stock?</strong><br>A: No, all apparel is pre-order only. Delivery takes around 2–3 weeks.</p>
+    <p><strong>Q: Do you ship outside Malaysia?</strong><br>A: Currently, we only ship within Malaysia.</p>
+    <p><strong>Q: Can I exchange size?</strong><br>A: No exchanges or returns. Please check our sizing chart before ordering.</p>
+    <p><strong>Q: How do I order?</strong><br>A: Click the WhatsApp link to place your order with us directly.</p>
   </section>
 
   <section class="section-grey" id="reviews">
     <h2>Customer Reviews</h2>
-    <p><em>“Love the oversized fit, material is soft and comfy!”</em> – Alia</p>
-    <p><em>“Perfect for everyday wear. Will buy again!”</em> – Danial</p>
-    <p><em>“Minimalist and versatile...”</em> – <strong>Pei Wen</strong></p>
+    <p><em>“Love the oversized fit, material is soft and comfy!”</em> – Alicia</p>
+    <p><em>“Perfect for everyday wear. Will buy again!”</em> – Wen Xuan</p>
+    <p><em>“Minimalist and versatile...”</em> – Pei Wen</p>
   </section>
 
   <section class="section-grey" id="policy">
     <h2>Store Policy</h2>
     <p>我们发货至马来西亚全境。部分商品为预购，通常在 2-3 周内发货。</p>
     <p>若商品有任何问题，我们将免费补发。不接受退货。</p>
+<p>We ship to all parts of Malaysia. Some items are pre-ordered and usually shipped within 2-3 weeks.</p>
+<p>If there is any problem with the item, we will resend it free of charge. No returns accepted.</p>
   </section>
 
   <section class="section-grey" id="contact">
     <h2>Contact Us</h2>
-    <p>TikTok: <a href="https://www.tiktok.com/@ozons_picks">@ozons_picks</a></p>
-    <p>📷 Instagram: <a href="https://www.instagram.com/ozons_store">@ozonspicks</a></p>
-    <p>Facebook: <a href="https://www.facebook.com/share/16B99Zufp1">@ozons picks</a></p>
-    <p>📱 WhatsApp: <a href="https://wa.me/60109371163">+60 10-937 1163</a></p>
-    <a href="https://wa.me/60109371163" class="order-btn">Order Now</a>
+    <p>TikTok: <a href="https://www.tiktok.com/@ozons_picks" target="_blank">@ozons_picks</a></p>
+    <p>📷 Instagram: <a href="https://www.instagram.com/ozons_store" target="_blank">@ozonspicks</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/share/16B99Zufp1" target="_blank">@ozons picks</a></p>
+    <p>📱 WhatsApp: <a href="https://wa.me/60109371163" target="_blank">+60 10-937 1163</a></p>
   </section>
 
   <section class="section-grey" id="order">
@@ -414,11 +515,7 @@
   </section>
 </div>
 
-<footer class="footer">
-  &copy; 2025 Ozons Picks. All rights reserved.
-</footer>
-
-<!-- Slide-out Cart Panel -->
+<!-- Slide-Out Cart Panel -->
 <div id="cart-panel" class="cart-panel">
   <div class="close-btn" onclick="toggleCart()">×</div>
   <h3>Your Cart</h3>
@@ -468,7 +565,7 @@
     renderCart();
   }
 
-  document.querySelectorAll(".product .add-to-cart").forEach(button => {
+  document.querySelectorAll(".add-to-cart").forEach(button => {
     button.addEventListener("click", () => {
       const product = button.closest(".product");
       const name = product.querySelector("h3").textContent;
@@ -492,27 +589,6 @@
     });
   });
 
-  function addFeaturedToCart() {
-    const name = "Aesthetic Box";
-    const price = 100;
-    const option = document.querySelector(".style-select").value;
-    const qty = parseInt(document.querySelector(".qty-input").value);
-
-    if (!option) {
-      alert("Please select a style");
-      return;
-    }
-
-    const existing = cart.find(p => p.name === name && p.option === option);
-    if (existing) {
-      existing.qty += qty;
-    } else {
-      cart.push({ name, option, qty, price });
-    }
-
-    renderCart();
-  }
-
   document.getElementById("checkout-btn").addEventListener("click", () => {
     if (cart.length === 0) return alert("Your cart is empty!");
 
@@ -527,6 +603,34 @@
   });
 
   renderCart();
+
+
+  function changeMainImage(imgElement) {
+    const gallery = imgElement.closest('.product-gallery');
+    const mainImg = gallery.querySelector('.main-image');
+    mainImg.src = imgElement.src;
+
+    // Remove all selected
+    gallery.querySelectorAll('.thumb').forEach(thumb => {
+      thumb.classList.remove('selected');
+    });
+    imgElement.classList.add('selected');
+  }
+
+
+function switchFeaturedImage(thumb) {
+  const mainImg = document.getElementById("main-featured-img");
+  mainImg.src = thumb.src;
+
+  // 移除所有缩略图的 active 状态
+  document.querySelectorAll(".thumbnail").forEach(el => el.classList.remove("active"));
+
+  // 给当前点击的加上 active
+  thumb.classList.add("active");
+}
+
+
+
 </script>
 
 </body>
