@@ -377,13 +377,14 @@
   .product-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 10px;
+    justify-content: center;
+    padding: 0 5px;
+    gap: 10px;
   }
 
   .product {
     width: calc(50% - 10px);
-    margin: 10px 0;
+    margin: 5px 0;
     background: #fff;
     border-radius: 12px;
     padding: 10px;
@@ -399,14 +400,43 @@
   .thumbnail-list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-top: 8px;
   }
 
   .thumbnail-list img.thumb {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     object-fit: cover;
-    margin: 0 4px;
+    border-radius: 6px;
+  }
+
+  .product h3 {
+    font-size: 15px;
+    margin: 10px 0 5px;
+  }
+
+  .product p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .product label,
+  .product select,
+  .product input,
+  .product button {
+    font-size: 14px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .product button.add-to-cart {
+    margin-top: 8px;
+    background: black;
+    color: white;
+    padding: 8px;
+    border: none;
     border-radius: 6px;
   }
 }
