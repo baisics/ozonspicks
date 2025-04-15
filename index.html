@@ -606,7 +606,57 @@
 
     
 </style>
+@media (max-width: 768px) {
+  .product-list {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 8px;
+  }
 
+  .product-list .product {
+    width: calc(50% - 8px) !important;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .product img.main-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 200px;
+  }
+
+  .product label {
+    font-size: 14px;
+  }
+
+  .product select,
+  .product input[type="number"] {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .product h3 {
+    font-size: 15px;
+  }
+
+  .product p {
+    font-size: 14px;
+  }
+
+  .add-to-cart {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .thumbnail-list img.thumb {
+    width: 40px;
+    height: 40px;
+  }
+}
   </style>
 </head>
 <body>
