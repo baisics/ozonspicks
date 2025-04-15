@@ -373,34 +373,49 @@
   background-color: #333;
 }
 
-.product-list {
+/* 保持产品网格为两列 */
+.product-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 12px;
-  padding: 0 10px;
+  padding: 0 12px;
+  box-sizing: border-box;
 }
 
 .product {
-  width: calc(50% - 6px);
+  width: calc(50% - 8px); /* 两列布局，左右留点空隙 */
   margin-bottom: 16px;
   background: #fff;
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  box-sizing: border-box;
 }
 
+/* 产品图修复：显示完整 */
 .product img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
+/* 适配小屏幕（手机）也显示两列 */
+@media screen and (max-width: 768px) {
+  .product-grid {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .product {
+    width: calc(50% - 8px);
+  }
+}
+
+/* 产品文字与输入框等美化 */
 .product h3 {
   font-size: 14px;
   margin: 6px 0;
@@ -427,11 +442,12 @@
   color: white;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
+/* 产品图集按钮 */
 .product-gallery {
   display: flex;
-  flex-wrap: wrap;
   gap: 4px;
   justify-content: center;
   margin-bottom: 10px;
@@ -443,10 +459,86 @@
   object-fit: cover;
   border: 2px solid transparent;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .product-gallery img.active {
   border-color: hotpink;
+}
+
+/* 修复产品卡图片显示不全 */
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+/* 修复 gallery 图标尺寸 & 外框 */
+.product-gallery img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+.product-gallery img.active {
+  border-color: hotpink;
+}
+
+/* 卡片布局优化，让两列整齐对齐 */
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 12px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .product-grid .product {
+    width: calc(50% - 6px);
+  }
+}
+
+/* 两列布局：桌面三列，手机两列 */
+.product-list.two-column-mobile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+/* 保持内容内部排版完整 */
+.product {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 保证图片大小舒适 */
+.product-gallery img.main-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
 }
 
 <style>
@@ -591,53 +683,56 @@
 </section>
 
 
-  
+
 
 
   <section class="section-grey" id="products">
     <h2>Best Sellers</h2>
-<div class="product-list">
-    <!-- Product 1 -->
-    <div class="product">
-      <div class="product-gallery">
-        <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="main-image" />
-        <div class="thumbnail-list">
-          <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="thumb selected" onclick="changeMainImage(this)" />
-          <img src="https://via.placeholder.com/100x100?text=2" class="thumb" onclick="changeMainImage(this)" />
-          <img src="https://via.placeholder.com/100x100?text=3" class="thumb" onclick="changeMainImage(this)" />
-        </div>
-      </div>
-      <h3>Smart LED Lamp</h3>
-      <p>RM129.00</p>
-     
-    <!-- Size -->
-    <div style="margin: 1rem 0;">
-      <label for="featured-style" style="font-weight: bold;">Select Style:</label><br>
-      <select id="featured-style" class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-      </select>
-    </div>
+<div class="product-grid">
 
-    <!-- Quantity -->
-    <div style="margin-bottom: 1rem;">
-      <label for="featured-qty" style="font-weight: bold;">Quantity:</label><br>
-      <input type="number" id="featured-qty" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+    <!-- Product 1 -->
+   <div class="product">
+  <div class="product-gallery">
+    <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="main-image" />
+    <div class="thumbnail-list">
+      <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="thumb selected" onclick="changeMainImage(this)" />
+      <img src="https://via.placeholder.com/100x100?text=2" class="thumb" onclick="changeMainImage(this)" />
+      <img src="https://via.placeholder.com/100x100?text=3" class="thumb" onclick="changeMainImage(this)" />
     </div>
-  <!-- ✅ 黑色 Add to Cart 按钮 -->
-    <button class="add-to-cart-btn"
-      data-name="Aesthetic Box"
-      data-price="100.00"
-      data-image="https://i.postimg.cc/XJtLG78H/Whats-App-Image-2025-04-11-at-23-20-27.jpg"
-      data-style-id="featured-style"
-      data-qty-id="featured-qty"
-      style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s;"
-      onmouseover="this.style.backgroundColor='#333'"
-      onmouseout="this.style.backgroundColor='black'">
-      Add to Cart
-    </button>
-    </div>
+  </div>
+  <h3>Smart LED Lamp</h3>
+  <p>RM129.00</p>
+
+  <!-- Style -->
+  <div style="margin: 1rem 0;">
+    <label style="font-weight: bold;">Select Style:</label><br>
+    <select class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+    </select>
+  </div>
+
+  <!-- Quantity -->
+  <div style="margin-bottom: 1rem;">
+    <label style="font-weight: bold;">Quantity:</label><br>
+    <input type="number" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+  </div>
+
+  <!-- Add to Cart -->
+  <button class="add-to-cart-btn"
+    data-name="Smart LED Lamp"
+    data-price="129.00"
+    data-image="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg"
+    data-style-id=""
+    data-qty-id=""
+    style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s;"
+    onmouseover="this.style.backgroundColor='#333'"
+    onmouseout="this.style.backgroundColor='black'">
+    Add to Cart
+  </button>
+</div>
+
 
 <!-- Product 1 -->
     <div class="product">
