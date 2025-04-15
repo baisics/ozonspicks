@@ -672,107 +672,93 @@
   </button>
 </div>
 
-  <!-- Add to Cart -->
+
+<!-- Product 1 -->
+  <div class="product">
+  <div class="product-gallery">
+    <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="main-image" />
+    <div class="thumbnail-list">
+      <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="thumb selected" onclick="changeMainImage(this)" />
+      <img src="https://via.placeholder.com/100x100?text=2" class="thumb" onclick="changeMainImage(this)" />
+      <img src="https://via.placeholder.com/100x100?text=3" class="thumb" onclick="changeMainImage(this)" />
+    </div>
+  </div>
+
+  <h3>Smart LED Lamp</h3>
+  <p>RM129.00</p>
+
+  <!-- Style 下拉 -->
+  <div style="margin: 0.5rem 0;">
+    <label for="lamp-style" style="font-weight: bold;">Select Style:</label><br>
+    <select id="lamp-style" class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+    </select>
+  </div>
+
+  <!-- Quantity 輸入 -->
+  <div style="margin-bottom: 0.5rem;">
+    <label for="lamp-qty" style="font-weight: bold;">Quantity:</label><br>
+    <input type="number" id="lamp-qty" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+  </div>
+
+  <!-- Add to Cart 按鈕 -->
   <button class="add-to-cart-btn"
     data-name="Smart LED Lamp"
     data-price="129.00"
     data-image="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg"
-    data-style-id=""
-    data-qty-id=""
-    style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s;"
-    onmouseover="this.style.backgroundColor='#333'"
-    onmouseout="this.style.backgroundColor='black'">
+    data-style-id="lamp-style"
+    data-qty-id="lamp-qty"
+    style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;">
     Add to Cart
   </button>
 </div>
 
 
-<!-- Product 1 -->
-    <div class="product">
-      <div class="product-gallery">
-        <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="main-image" />
-        <div class="thumbnail-list">
-          <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="thumb selected" onclick="changeMainImage(this)" />
-          <img src="https://via.placeholder.com/100x100?text=2" class="thumb" onclick="changeMainImage(this)" />
-          <img src="https://via.placeholder.com/100x100?text=3" class="thumb" onclick="changeMainImage(this)" />
-        </div>
-      </div>
-      <h3>Smart LED Lamp</h3>
-      <p>RM129.00</p>
-     
-    <!-- Size -->
-    <div style="margin: 1rem 0;">
-      <label for="featured-style" style="font-weight: bold;">Select Style:</label><br>
-      <select id="featured-style" class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-      </select>
-    </div>
-
-    <!-- Quantity -->
-    <div style="margin-bottom: 1rem;">
-      <label for="featured-qty" style="font-weight: bold;">Quantity:</label><br>
-      <input type="number" id="featured-qty" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
-    </div>
-  <!-- ✅ 黑色 Add to Cart 按钮 -->
-    <button class="add-to-cart-btn"
-      data-name="Aesthetic Box"
-      data-price="100.00"
-      data-image="https://i.postimg.cc/XJtLG78H/Whats-App-Image-2025-04-11-at-23-20-27.jpg"
-      data-style-id="featured-style"
-      data-qty-id="featured-qty"
-      style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s;"
-      onmouseover="this.style.backgroundColor='#333'"
-      onmouseout="this.style.backgroundColor='black'">
-      Add to Cart
-    </button>
-    </div>
-
     
 
 
-<!-- Product 1 -->
-    <div class="product">
-      <div class="product-gallery">
-        <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="main-image" />
-        <div class="thumbnail-list">
-          <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="thumb selected" onclick="changeMainImage(this)" />
-          <img src="https://via.placeholder.com/100x100?text=2" class="thumb" onclick="changeMainImage(this)" />
-          <img src="https://via.placeholder.com/100x100?text=3" class="thumb" onclick="changeMainImage(this)" />
-        </div>
-      </div>
-      <h3>Smart LED Lamp</h3>
-      <p>RM129.00</p>
-     
-    <!-- Size -->
-    <div style="margin: 1rem 0;">
-      <label for="featured-style" style="font-weight: bold;">Select Style:</label><br>
-      <select id="featured-style" class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-      </select>
+<<div class="product">
+  <div class="product-gallery">
+    <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="main-image" />
+    <div class="thumbnail-list">
+      <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="thumb selected" onclick="changeMainImage(this)" />
+      <img src="https://via.placeholder.com/100x100?text=2" class="thumb" onclick="changeMainImage(this)" />
+      <img src="https://via.placeholder.com/100x100?text=3" class="thumb" onclick="changeMainImage(this)" />
     </div>
+  </div>
 
-    <!-- Quantity -->
-    <div style="margin-bottom: 1rem;">
-      <label for="featured-qty" style="font-weight: bold;">Quantity:</label><br>
-      <input type="number" id="featured-qty" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
-    </div>
-  <!-- ✅ 黑色 Add to Cart 按钮 -->
-    <button class="add-to-cart-btn"
-      data-name="Aesthetic Box"
-      data-price="100.00"
-      data-image="https://i.postimg.cc/XJtLG78H/Whats-App-Image-2025-04-11-at-23-20-27.jpg"
-      data-style-id="featured-style"
-      data-qty-id="featured-qty"
-      style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s;"
-      onmouseover="this.style.backgroundColor='#333'"
-      onmouseout="this.style.backgroundColor='black'">
-      Add to Cart
-    </button>
-    </div>
+  <h3>Smart LED Lamp</h3>
+  <p>RM129.00</p>
+
+  <!-- Style 下拉 -->
+  <div style="margin: 0.5rem 0;">
+    <label for="lamp-style" style="font-weight: bold;">Select Style:</label><br>
+    <select id="lamp-style" class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+    </select>
+  </div>
+
+  <!-- Quantity 輸入 -->
+  <div style="margin-bottom: 0.5rem;">
+    <label for="lamp-qty" style="font-weight: bold;">Quantity:</label><br>
+    <input type="number" id="lamp-qty" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+  </div>
+
+  <!-- Add to Cart 按鈕 -->
+  <button class="add-to-cart-btn"
+    data-name="Smart LED Lamp"
+    data-price="129.00"
+    data-image="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg"
+    data-style-id="lamp-style"
+    data-qty-id="lamp-qty"
+    style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;">
+    Add to Cart
+  </button>
+</div>
 
 </section>
 
