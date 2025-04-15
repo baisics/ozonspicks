@@ -404,141 +404,81 @@
 }
 
 /* 适配小屏幕（手机）也显示两列 */
-@media screen and (max-width: 768px) {
-  .product-grid {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .product {
-    width: calc(50% - 8px);
-  }
-}
-
-/* 产品文字与输入框等美化 */
-.product h3 {
-  font-size: 14px;
-  margin: 6px 0;
-}
-
-.product p {
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.product select,
-.product input[type="number"] {
-  width: 100%;
-  font-size: 13px;
-  padding: 4px;
-  margin-bottom: 6px;
-}
-
-.product .add-to-cart {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* 产品图集按钮 */
-.product-gallery {
-  display: flex;
-  gap: 4px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.product-gallery img {
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.product-gallery img.active {
-  border-color: hotpink;
-}
-
-/* 修复产品卡图片显示不全 */
-.product img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-
-/* 修复 gallery 图标尺寸 & 外框 */
-.product-gallery img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 2px solid transparent;
-}
-
-.product-gallery img.active {
-  border-color: hotpink;
-}
-
-/* 卡片布局优化，让两列整齐对齐 */
-.product {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 12px;
-  box-sizing: border-box;
-}
+/* 針對手機視圖的產品排列調整 */
 @media (max-width: 768px) {
-  .product-grid {
+  .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
     justify-content: space-between;
+    padding: 0 8px;
   }
 
-  .product-grid .product {
-    width: calc(50% - 6px);
+  .product-list .product {
+    width: calc(50% - 8px);
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
   }
-}
 
-/* 两列布局：桌面三列，手机两列 */
-.product-list.two-column-mobile {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
-}
+  .product img.main-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
 
-/* 保持内容内部排版完整 */
-.product {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  .thumbnail-list {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
 
-/* 保证图片大小舒适 */
-.product-gallery img.main-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
+  .thumbnail-list img.thumb {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .thumbnail-list img.thumb.selected {
+    border-color: hotpink;
+  }
+
+  .product h3 {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  .product p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .product select,
+  .product input[type="number"] {
+    width: 100%;
+    font-size: 13px;
+    padding: 6px;
+    margin-bottom: 8px;
+  }
+
+  .product .add-to-cart {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+  }
 }
 
 <style>
@@ -691,7 +631,7 @@
 <div class="product-grid">
 
     <!-- Product 1 -->
-   <div class="product">
+<div class="product">
   <div class="product-gallery">
     <img src="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg" class="main-image" />
     <div class="thumbnail-list">
@@ -700,24 +640,37 @@
       <img src="https://via.placeholder.com/100x100?text=3" class="thumb" onclick="changeMainImage(this)" />
     </div>
   </div>
+
   <h3>Smart LED Lamp</h3>
   <p>RM129.00</p>
 
-  <!-- Style -->
-  <div style="margin: 1rem 0;">
-    <label style="font-weight: bold;">Select Style:</label><br>
-    <select class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+  <!-- Style 下拉 -->
+  <div style="margin: 0.5rem 0;">
+    <label for="lamp-style" style="font-weight: bold;">Select Style:</label><br>
+    <select id="lamp-style" class="product-style" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
       <option value="S">S</option>
       <option value="M">M</option>
       <option value="L">L</option>
     </select>
   </div>
 
-  <!-- Quantity -->
-  <div style="margin-bottom: 1rem;">
-    <label style="font-weight: bold;">Quantity:</label><br>
-    <input type="number" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
+  <!-- Quantity 輸入 -->
+  <div style="margin-bottom: 0.5rem;">
+    <label for="lamp-qty" style="font-weight: bold;">Quantity:</label><br>
+    <input type="number" id="lamp-qty" class="product-qty" min="1" value="1" style="width: 100%; padding: 8px; border-radius: 6px; margin-top: 5px;">
   </div>
+
+  <!-- Add to Cart 按鈕 -->
+  <button class="add-to-cart-btn"
+    data-name="Smart LED Lamp"
+    data-price="129.00"
+    data-image="https://i.postimg.cc/23MXJCfK/Whats-App-Image-2025-04-14-at-21-01-03.jpg"
+    data-style-id="lamp-style"
+    data-qty-id="lamp-qty"
+    style="background-color: black; color: white; padding: 12px; width: 100%; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;">
+    Add to Cart
+  </button>
+</div>
 
   <!-- Add to Cart -->
   <button class="add-to-cart-btn"
