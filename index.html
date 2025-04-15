@@ -377,14 +377,19 @@
 .product-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 12px;
+  gap: 16px;
+  padding: 12px;
+  justify-content: center;
   box-sizing: border-box;
 }
 
 .product {
-  width: calc(50% - 8px); /* 两列，减去间距 */
-  margin-bottom: 16px;
+  flex: 1 1 calc(48% - 16px); /* 接近 2 列，留出一些间距 */
+  max-width: calc(48% - 16px); /* 不超过两列 */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
   box-sizing: border-box;
 }
 
