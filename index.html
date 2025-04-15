@@ -481,6 +481,37 @@
   }
 }
 
+@media (max-width: 768px) {
+  /* Product 卡片寬度調整，減少灰色背景 */
+  .product {
+    width: 90%; /* 原本可能是 45% 或 48% */
+    margin: 0 auto 20px auto;
+    padding: 15px;
+  }
+
+  /* 商品圖片放大一點 */
+  .product img.main-image {
+    width: 100%;
+    height: auto;
+    max-height: 220px; /* 控制不要太高 */
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  /* 縮小 label 字體，但保留框框大小 */
+  .product label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  /* 讓整體文字區更緊湊一點 */
+  .product .product-info {
+    padding: 10px 0;
+  }
+}
+    
 <style>
   .product {
     max-width: 300px;
