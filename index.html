@@ -826,7 +826,16 @@
     allThumbs.forEach(t => t.classList.remove('selected'));
     thumb.classList.add('selected');
   }
+ function changeMainImage(thumbnail) {
+      const container = thumbnail.closest('.product');
+      const mainImage = container.querySelector('.main-image');
+      const allThumbs = container.querySelectorAll('.thumb');
 
+      allThumbs.forEach(t => t.classList.remove('selected'));
+      thumbnail.classList.add('selected');
+
+      mainImage.src = thumbnail.src;
+    }
 </script>
 
 </body>
