@@ -373,10 +373,29 @@
   background-color: #333;
 }
 
-  @media screen and (max-width: 768px) {
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+ /* 让产品区变成两列布局 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+}
+
+/* 针对移动端：确保在手机上是两栏 */
+@media screen and (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 每个产品卡统一大小和样式 */
+.product {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
 
 
 <style>
@@ -526,7 +545,7 @@
 
   <section class="section-grey" id="products">
     <h2>Best Sellers</h2>
-
+<div class="product-grid">
     <!-- Product 1 -->
     <div class="product">
       <div class="product-gallery">
@@ -826,16 +845,7 @@
     allThumbs.forEach(t => t.classList.remove('selected'));
     thumb.classList.add('selected');
   }
- function changeMainImage(thumbnail) {
-      const container = thumbnail.closest('.product');
-      const mainImage = container.querySelector('.main-image');
-      const allThumbs = container.querySelectorAll('.thumb');
 
-      allThumbs.forEach(t => t.classList.remove('selected'));
-      thumbnail.classList.add('selected');
-
-      mainImage.src = thumbnail.src;
-    }
 </script>
 
 </body>
