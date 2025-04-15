@@ -392,6 +392,63 @@
     margin-bottom: 20px;
   }
 }
+
+    .products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.product {
+  flex: 1 1 calc(50% - 20px);
+  box-sizing: border-box;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* 確保圖片不要太大或太小 */
+.product .main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* 商品縮圖也做些微調整 */
+.product .thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.product .thumb.selected {
+  border-color: #000;
+}
+
+/* RWD 設定：根據螢幕寬度調整欄數 */
+@media (max-width: 600px) {
+  .product {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .product {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (min-width: 1025px) {
+  .product {
+    flex: 1 1 calc(25% - 20px);
+  }
+}
   </style>
 </head>
 <body>
