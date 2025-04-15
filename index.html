@@ -375,28 +375,25 @@
 
  /* 让产品区变成两列布局 */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 0 12px;
   box-sizing: border-box;
 }
 
 .product {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px;
+  width: calc(50% - 8px); /* 两列，减去间距 */
+  margin-bottom: 16px;
   box-sizing: border-box;
-  width: 100%; /* 让它自动填满每一格 */
 }
+
 
 /* 针对移动端：确保在手机上是两栏 */
 @media screen and (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
 
 
