@@ -373,71 +373,34 @@
   background-color: #333;
 }
 
- /* 让产品区变成两列布局 */
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 12px;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.product {
-  flex: 1 1 calc(48% - 16px); /* 接近 2 列，留出一些间距 */
-  max-width: calc(48% - 16px); /* 不超过两列 */
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 12px;
-  box-sizing: border-box;
-}
-
-
-/* 针对移动端：确保在手机上是两栏 */
-/* 保持产品网格为两列 */
-.product-grid {
+.product-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 12px;
-  box-sizing: border-box;
+  gap: 12px;
+  padding: 0 10px;
 }
 
 .product {
-  width: calc(50% - 8px); /* 两列布局，左右留点空隙 */
+  width: calc(50% - 6px);
   margin-bottom: 16px;
   background: #fff;
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  box-sizing: border-box;
 }
 
-/* 产品图修复：显示完整 */
 .product img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
-/* 适配小屏幕（手机）也显示两列 */
-@media screen and (max-width: 768px) {
-  .product-grid {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .product {
-    width: calc(50% - 8px);
-  }
-}
-
-/* 产品文字与输入框等美化 */
 .product h3 {
   font-size: 14px;
   margin: 6px 0;
@@ -464,12 +427,11 @@
   color: white;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
 }
 
-/* 产品图集按钮 */
 .product-gallery {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   justify-content: center;
   margin-bottom: 10px;
@@ -481,59 +443,10 @@
   object-fit: cover;
   border: 2px solid transparent;
   border-radius: 4px;
-  cursor: pointer;
 }
 
 .product-gallery img.active {
   border-color: hotpink;
-}
-
-/* 修复产品卡图片显示不全 */
-.product img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-
-/* 修复 gallery 图标尺寸 & 外框 */
-.product-gallery img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 2px solid transparent;
-}
-
-.product-gallery img.active {
-  border-color: hotpink;
-}
-
-/* 卡片布局优化，让两列整齐对齐 */
-.product {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 12px;
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: space-between;
-  }
-
-  .product-grid .product {
-    width: calc(50% - 6px);
-  }
 }
 
 <style>
@@ -683,7 +596,7 @@
 
   <section class="section-grey" id="products">
     <h2>Best Sellers</h2>
-<div class="product-grid">
+<div class="product-list">
     <!-- Product 1 -->
     <div class="product">
       <div class="product-gallery">
