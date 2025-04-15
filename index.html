@@ -373,289 +373,43 @@
   background-color: #333;
 }
 
-/* 保持产品网格为两列 */
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 12px;
-  box-sizing: border-box;
-}
-
-.product {
-  width: calc(50% - 8px); /* 两列布局，左右留点空隙 */
-  margin-bottom: 16px;
-  background: #fff;
-  border-radius: 8px;
-  padding: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-/* 产品图修复：显示完整 */
-.product img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-/* 适配小屏幕（手机）也显示两列 */
-/* 針對手機視圖的產品排列調整 */
 @media (max-width: 768px) {
   .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
     justify-content: space-between;
-    padding: 0 8px;
+    padding: 0 10px;
   }
 
-  .product-list .product {
-    width: calc(50% - 8px);
-    background: #fff;
-    border-radius: 10px;
-    padding: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .product img.main-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-
-  .thumbnail-list {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .thumbnail-list img.thumb {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 2px solid transparent;
-    cursor: pointer;
-  }
-
-  .thumbnail-list img.thumb.selected {
-    border-color: hotpink;
-  }
-
-  .product h3 {
-    font-size: 14px;
-    margin: 6px 0;
-  }
-
-  .product p {
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-
-  .product select,
-  .product input[type="number"] {
-    width: 100%;
-    font-size: 13px;
-    padding: 6px;
-    margin-bottom: 8px;
-  }
-
-  .product .add-to-cart {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    background: black;
-    color: white;
-    border: none;
-    border-radius: 6px;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Product 卡片寬度調整，減少灰色背景 */
   .product {
-    width: 90%; /* 原本可能是 45% 或 48% */
-    margin: 0 auto 20px auto;
-    padding: 15px;
-  }
-
-  /* 商品圖片放大一點 */
-  .product img.main-image {
-    width: 100%;
-    height: auto;
-    max-height: 220px; /* 控制不要太高 */
-    object-fit: contain;
-    margin-bottom: 10px;
-  }
-
-  /* 縮小 label 字體，但保留框框大小 */
-  .product label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 4px;
-    display: block;
-  }
-
-  /* 讓整體文字區更緊湊一點 */
-  .product .product-info {
-    padding: 10px 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .product-section {
-    padding: 10px;
-  }
-
-  .product-card {
     width: calc(50% - 10px);
-    margin: 5px;
-    padding: 12px;
-  }
-
-  .product-card img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .product-card h3 {
-    font-size: 16px;
-  }
-
-  .product-card p {
-    font-size: 14px;
-  }
-
-  .product-card label {
-    font-size: 13px; /* 小一點的 Select Style 和 Quantity 字體 */
-  }
-
-  .product-card select,
-  .product-card input[type="number"] {
-    font-size: 14px;
-  }
-
-  .product-card button {
-    font-size: 14px;
-    padding: 10px 0;
-  }
-
-  .thumbnail {
-    width: 40px;
-    height: 40px;
-    margin-right: 4px;
-  }
-}
-    
-
-  .product {
-    max-width: 300px;
-    margin: 2rem auto;
-    border: 1px solid #eee;
-    padding: 1rem;
+    margin: 10px 0;
+    background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-
-  .product-gallery .main-image {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-
-  .thumbnail-list {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .thumb {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 6px;
-    cursor: pointer;
-    border: 2px solid transparent;
-  }
-
-  .thumb.selected {
-    border: 2px solid hotpink;
-  }
-
-  .add-to-cart {
-    margin-top: 10px;
-    background: black;
-    color: white;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-    @media (max-width: 768px) {
-  .product-list {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 0 8px;
-  }
-
-  .product-list .product {
-    width: calc(50% - 8px) !important;
-    margin-bottom: 20px;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .product img.main-image {
     width: 100%;
     height: auto;
-    object-fit: contain;
-    max-height: 200px;
+    border-radius: 8px;
   }
 
-  .product label {
-    font-size: 14px;
-  }
-
-  .product select,
-  .product input[type="number"] {
-    font-size: 14px;
-    padding: 6px;
-  }
-
-  .product h3 {
-    font-size: 15px;
-  }
-
-  .product p {
-    font-size: 14px;
-  }
-
-  .add-to-cart {
-    font-size: 14px;
-    padding: 10px;
+  .thumbnail-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
   }
 
   .thumbnail-list img.thumb {
     width: 40px;
     height: 40px;
+    object-fit: cover;
+    margin: 0 4px;
+    border-radius: 6px;
   }
 }
-
   </style>
 </head>
 <body>
