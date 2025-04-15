@@ -395,79 +395,144 @@
 
 
 /* 针对移动端：确保在手机上是两栏 */
+/* 保持产品网格为两列 */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.product {
+  width: calc(50% - 8px); /* 两列布局，左右留点空隙 */
+  margin-bottom: 16px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* 产品图修复：显示完整 */
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* 适配小屏幕（手机）也显示两列 */
 @media screen and (max-width: 768px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-
-@media (max-width: 768px) {
-  .product-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .product {
-    padding: 0.8rem;
-    font-size: 0.95rem;
-  }
-
-  .product h3 {
-    font-size: 1rem;
-  }
-
-  .product p {
-    font-size: 0.9rem;
-  }
-
-  .product select,
-  .product input[type="number"],
-  .product .add-to-cart {
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 768px) {
-  .product-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
-  .product {
-    padding: 1rem 0.6rem;
-    font-size: 0.95rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .product h3 {
-    font-size: 1rem;
-    line-height: 1.2;
+  .product {
+    width: calc(50% - 8px);
+  }
+}
+
+/* 产品文字与输入框等美化 */
+.product h3 {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.product p {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.product select,
+.product input[type="number"] {
+  width: 100%;
+  font-size: 13px;
+  padding: 4px;
+  margin-bottom: 6px;
+}
+
+.product .add-to-cart {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 产品图集按钮 */
+.product-gallery {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.product-gallery img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-gallery img.active {
+  border-color: hotpink;
+}
+
+/* 修复产品卡图片显示不全 */
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+/* 修复 gallery 图标尺寸 & 外框 */
+.product-gallery img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+.product-gallery img.active {
+  border-color: hotpink;
+}
+
+/* 卡片布局优化，让两列整齐对齐 */
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 12px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
   }
 
-  .product p {
-    font-size: 0.9rem;
-  }
-
-  .product select,
-  .product input[type="number"],
-  .product .add-to-cart {
-    font-size: 0.85rem;
-    width: 100%;
-  }
-
-  .product .add-to-cart {
-    margin-top: 0.5rem;
-  }
-
-  .product-gallery {
-    margin-bottom: 0.8rem;
+  .product-grid .product {
+    width: calc(50% - 6px);
   }
 }
 
